@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>4'te 3</title>
+<style type="text/css">
+.class_btn {
+	width: 150px;
+	font-size: 17px;
+}
+.score {
+	background: url(gfx/chapter_label.png) no-repeat scroll;
+	font: bold 17px Arial;
+	width: 85px;
+	height: 45px;
+	position: absolute;
+	color: #fff;
+	padding-top: 0px;
+	padding-left: 10px;
+	margin-top: 25px;
+}
+.score span {
+	font: bold 26px/21px Arial;
+}
+.gamecontent {
+	background: url(gfx/game_bg.png) no-repeat scroll;
+	width: 611px;
+	height: 237px;
+	margin: 0 auto;
+	position: relative;
+}
+.gamecontent ul.buttons {
+	position:absolute;
+	margin-left: 85px;
+	margin-top: 0px;
+}
+.gamecontent ul.buttons li {
+	cursor: pointer;
+	font-size: 50px;
+	font-family: Arial, Helvetica, sans-serif;
+	background: url(gfx/box.png) no-repeat scroll;
+	float:left;
+	margin-left: 5px;
+	margin-right: 5px;
+	list-style: none;
+	width: 69px;
+	height: 78px;
+	padding-top: 20px;
+	padding-left: 35px;
+}
+
+.gamecontent ul.buttons li:hover {
+	background: url(gfx/box_mouse_over.png) no-repeat scroll;
+	float:left;
+	margin-left: 5px;
+	margin-right: 5px;
+	list-style: none;
+	width: 69px;
+	height: 78px;
+	padding-top: 20px;
+	padding-left: 35px;
+	color: #FFF;
+}
+
+.gameinfo {
+	background: url(gfx/second_third_screen.png) no-repeat scroll;
+	width: 523px;
+	height: 127px;
+}
+
+.error {
+	display: none;
+}
+
+.error img {
+	margin-left: 200px;
+}
+
+#btnRetry {
+	cursor: pointer;
+}
+</style>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var spath;
+    var failbox;
+    var score;
+    var pushnumber;
+    jQuery.jQueryRandom = 0;
+    jQuery.extend(jQuery.expr[":"],
+        {
+            random: function(a, i, m, r) {
+                if (i == 0) {
+                    jQuery.jQueryRandom = Math.floor(Math.random() * r.length);
+                };
+                return i == jQuery.jQueryRandom;
+            }
+        });
+</script>
+</head>
+
+<body>
+	<div class="message"></div>
+	<div class="gamecontent">
+    	<div class="ready">
+            <div class="gameinfo"></div>
+            <ul class="buttons">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        	<div class="score">Aşama : <br/><span>0</span></div>
+        </div>
+        <div class="error">
+        	<div class="gameinfo"></div>
+            <div class="lostscr"><img src="gfx/lost_gamer.png" alt="" /></div>
+            <div class="btnagain"><img src="gfx/again_btn.png" alt="" id="btnRetry" /></div>
+        </div>
+	</div>
+    <script type="text/javascript" src="js/game.js"></script>
+</body>
+</html>
